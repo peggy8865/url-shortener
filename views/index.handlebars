@@ -1,0 +1,15 @@
+{{#unless shortUrl}}
+<form action="/" method="POST" id="submit-form" onsubmit="return checkUrl()" class="mx-auto" style="max-width: 850px;">
+  <input type="text" id="url" class="form-control border border-0 bg-light fs-5 px-4 py-2" style="border-radius: 0;" name="url" placeholder="Input URL here" value="{{url}}" required>
+  <p id="submit-alert" class="text-danger mb-4"></p>
+  <button type="submit" id="submit-button" class="btn btn-outline-primary d-block mx-auto fs-5" style="width: 60%; border-radius: 0;">Shorten</button>
+</form>
+
+{{else}}
+<div class="mx-auto" style="max-width: 850px;">
+  <h3 class="fw-bold">Success! Please use this link:</h3>
+  <a href="http://localhost:3000/{{shortUrl}}" id="short-url" class="text-decoration-none fs-5 fw-bold" target="_blank">http://localhost:3000/{{shortUrl}}</a>
+  <button id="copy-button" onclick="copyText()" class="btn btn-primary d-block mt-4 mx-auto fs-5" style="width: 25%; border-radius: 0;">Copy</button>
+</div>
+
+{{/unless}}
