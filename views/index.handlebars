@@ -1,4 +1,6 @@
 {{#unless shortUrl}}
+<!-- set input value required: the browser would give user a hint when there is no input -->
+<!-- execute function checkUrl() on submit: check the input url format before submitting  -->
 <form action="/" method="POST" id="submit-form" onsubmit="return checkUrl()" class="mx-auto" style="max-width: 850px;">
   <input type="text" id="url" class="form-control border border-0 bg-light fs-5 px-4 py-2" style="border-radius: 0;" name="url" placeholder="Input URL here" value="{{url}}" required>
   <p id="submit-alert" class="text-danger mb-4"></p>
