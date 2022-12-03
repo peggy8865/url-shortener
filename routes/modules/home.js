@@ -2,19 +2,7 @@ const express = require('express')
 const router = express.Router()
 
 const URL = require('../../models/urls')
-
-function getRandomString() {
-  const lowerCaseLetters = 'abcdefghijklmnopqrstuvwxyz'
-  const upperCaseLetters = lowerCaseLetters.toUpperCase()
-  const numbers = '1234567890'
-  const collection = lowerCaseLetters + upperCaseLetters + numbers
-  let randomString = ''
-  for (let i = 0; i < 5; i++) {
-    const index = Math.floor(Math.random() * collection.length)
-    randomString += collection[index]
-  }
-  return randomString
-}
+require('../../utilities/getRandomString')
 
 router.get('/', (req, res) => {
   res.render('index')
